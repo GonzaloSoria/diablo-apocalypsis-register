@@ -1,0 +1,23 @@
+---
+const { title, copy } = Astro.props;
+---
+
+<section class="called mt-80">
+    <div class="container mx-auto">
+        <h2 class="text-center mb-5">{title}</h2>
+        <p class="text-center text-white">{copy}</p>
+        <video autoplay loop muted>
+            <source src="https://blz-contentstack-assets.akamaized.net/v3/assets/blt9c12f249ac15c7ec/bltb6e269455cd58b2e/62a06a53d1dfb243261cabb4/fenris-story-bg-loop-ultra.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<style>
+    .called h2 {
+        color: var(--text-first-color);
+    }
+
+    .called p {
+        color: #CCCCCC;
+    }
+</style>

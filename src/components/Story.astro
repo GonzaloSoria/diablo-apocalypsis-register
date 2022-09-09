@@ -1,0 +1,67 @@
+---
+import baal from '../assets/img/baal.png';
+import orbe from '../assets/img/orbe.gif';
+import demon from '../assets/img/demon.png';
+import divider from '../assets/img/divider.png';
+const { title, copy, cta_copy } = Astro.props;
+---
+
+<section class="story">
+    <div class="container pt-36 mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="flex flex-col justify-center">
+                <h2 class="story-subtitle mb-10" data-aos="fade-up" data-aos-duration="1000">{title}</h2>
+                <p class="story-copy" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">{copy}</p>
+            </div>
+            <div class="mx-auto">
+                <a href="https://youtu.be/DT9SSA4lKLA" target="_blank">
+                    <img src={baal} alt="Baal">
+                </a>
+                <p class="text-center mt-5 story-copy-trailer">{cta_copy}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto demon-container">
+        <img src={orbe} alt="orbe" class="orbe">
+        <img src={demon} alt="">
+    </div>
+    <img src={divider}>
+</section>
+
+<style>
+    .story {
+        background-image: url('../assets/img/baal-bg.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .story-subtitle {
+        color: var(--text-first-color);
+    }
+
+    .story-copy {
+        color: #CCCCCC;
+    }
+
+    .story-copy-trailer {
+        font-family: var(--title-font-family);
+        color: var(--text-first-color);
+        text-transform: uppercase;
+    }
+
+    .demon-container {
+        position: relative;
+    }
+
+    .orbe {
+        background-image: url('../assets/img/orbe.gif');
+        position: absolute;
+        left: 107px;
+        top: 30px;
+        width: 95px;
+        height: 97px;
+        background: no-repeat;
+    }
+
+</style>

@@ -1,0 +1,68 @@
+---
+import divider from '../assets/img/divider.png';
+const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
+---
+
+<section class="hero bg-fixed pt-20">
+    <div class="container mx-auto pt-10">
+        <div class="flex flex-col justify-content items-center pt-56 pb-30 mt-40">
+            <p class="text-white" id="hero-subtitle">{subtitle}</p>
+            <h1 class="mb-5 text-center hero-title" id="hero-title">{title}</h1>
+            <p class="hero-copy" id="hero-copy">{copy}</p>
+            <a href="https://youtu.be/DT9SSA4lKLA" class="register" id="cta"><span>Registrarse</span></a>
+        </div>
+    </div>
+    <img src={divider} alt="" class="mt-20">
+</section>
+
+
+<style>
+    .hero {
+        background-image: url('../assets/img/hero-bg.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .hero-title, .hero-copy{
+        color: var(--text-first-color);
+        text-transform: uppercase;
+    }
+
+    .cta {
+        width: 200px;
+        padding: 15px;
+        background: var(--background-second-color);
+        text-align: center;
+        color: var(--text-second-color);
+        font-size: 20px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    .register {
+        background: url('../assets/img/cta-trailer.png') no-repeat;
+        background-position: 0 0;
+        display: block;
+        height: 133px;
+        float: left;
+        margin-top: 45px;
+        margin-left: 11px;
+        position: relative;
+        width: 315px;
+        color: #ad835a;
+    }
+
+    .register span {
+        color: #f3e6d0;
+        font-family: var(--title-font-family);
+        left: 113px;
+        position: relative;
+        top: 57px;
+        text-transform: uppercase;
+    }
+
+    .register:hover {
+        background-position: 0 -132px;
+    }
+</style>
