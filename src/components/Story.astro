@@ -3,7 +3,7 @@ const { title, copy, cta_copy } = Astro.props;
 ---
 
 <section class="story">
-    <div class="container pt-36 mx-auto">
+    <div class="container py-40 mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="flex flex-col justify-center">
                 <h2 class="story-subtitle mb-10" data-aos="fade-up" data-aos-duration="1000">{title}</h2>
@@ -16,10 +16,6 @@ const { title, copy, cta_copy } = Astro.props;
                 <p class="text-center mt-5 story-copy-trailer">{cta_copy}</p>
             </div>
         </div>
-    </div>
-    <div class="container mx-auto demon-container">
-        <img src="./assets/img/orbe.gif" alt="orbe" class="orbe">
-        <img src="./assets/img/demon.png" alt="">
     </div>
     <img src="./assets/img/divider.png">
 </section>
