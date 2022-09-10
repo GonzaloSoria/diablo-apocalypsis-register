@@ -1,8 +1,4 @@
 ---
-import baal from '../assets/img/baal.png';
-import orbe from '../assets/img/orbe.gif';
-import demon from '../assets/img/demon.png';
-import divider from '../assets/img/divider.png';
 const { title, copy, cta_copy } = Astro.props;
 ---
 
@@ -15,17 +11,17 @@ const { title, copy, cta_copy } = Astro.props;
             </div>
             <div class="mx-auto">
                 <a href="https://youtu.be/DT9SSA4lKLA" target="_blank">
-                    <img src={baal} alt="Baal">
+                    <img src="./assets/img/baal.png" alt="Baal">
                 </a>
                 <p class="text-center mt-5 story-copy-trailer">{cta_copy}</p>
             </div>
         </div>
     </div>
     <div class="container mx-auto demon-container">
-        <img src={orbe} alt="orbe" class="orbe">
-        <img src={demon} alt="">
+        <img src="./assets/img/orbe.gif" alt="orbe" class="orbe">
+        <img src="./assets/img/demon.png" alt="">
     </div>
-    <img src={divider}>
+    <img src="./assets/img/divider.png">
 </section>
 
 <style>

@@ -3,7 +3,7 @@ export const data =  {
         title: 'Preparate para la batalla',
         subtitle: 'Salva al mundo del infierno',
         copy: 'Registrate y esperá el llamado de la Luz',
-        ctaLink: '#',
+        ctaLink: 'https://youtu.be/DT9SSA4lKLA',
         ctaCopy: 'Registrarse'
     },
     story: {

@@ -1,5 +1,4 @@
 ---
-import divider from '../assets/img/divider.png';
 const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
 ---
 
@@ -9,16 +8,16 @@ const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
             <p class="text-white" id="hero-subtitle">{subtitle}</p>
             <h1 class="mb-5 text-center hero-title" id="hero-title">{title}</h1>
             <p class="hero-copy" id="hero-copy">{copy}</p>
-            <a href="https://youtu.be/DT9SSA4lKLA" class="register" id="cta"><span>Registrarse</span></a>
+            <a href={cta_link} target="_blank" class="register" id="cta"><span>{cta_copy}</span></a>
         </div>
     </div>
-    <img src={divider} alt="" class="mt-20">
+    <img src="./assets/img/divider.png" alt="" class="mt-20">
 </section>
 
 
 <style>
     .hero {
-        background-image: url('../assets/img/hero-bg.jpg');
+        background-image: url('./assets/img/hero-bg.jpg');
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
