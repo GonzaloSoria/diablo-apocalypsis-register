@@ -5,10 +5,10 @@ const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
 <section class="hero bg-fixed pt-20">
     <div class="container mx-auto pt-10">
         <div class="flex flex-col justify-content items-center pt-56 pb-30 mt-40">
-            <p class="text-white" id="hero-subtitle">{subtitle}</p>
+            <p class="text-white hero-subtitle" id="hero-subtitle">{subtitle}</p>
             <h1 class="mb-5 text-center hero-title" id="hero-title">{title}</h1>
             <p class="hero-copy" id="hero-copy">{copy}</p>
-            <a href={cta_link} target="_blank" class="register" id="cta"><span>{cta_copy}</span></a>
+            <a href={cta_link} class="register" id="cta"><span>{cta_copy}</span></a>
         </div>
     </div>
     <img src="./assets/img/divider.png" alt="" class="mt-20">
@@ -17,7 +17,7 @@ const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
 
 <style>
     .hero {
-        background-image: url('./assets/img/hero-bg.jpg');
+        background-image: url('https://images5.alphacoders.com/112/1126803.jpg');
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -25,7 +25,12 @@ const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
 
     .hero-title, .hero-copy{
         color: var(--text-first-color);
+        text-shadow: 0px 3px 6px #000000;
         text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+        text-shadow: 0px 3px 6px #000000;
     }
 
     .cta {

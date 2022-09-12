@@ -2,10 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Story from '../components/Story.astro';
-import Characters from '../components/Characters.astro';
 import { data } from '../data/data';
 import Form from '../components/Form.svelte';
 import Called from '../components/Called.astro';
+import World from '../components/World.astro';
 ---
 
 <Layout title="Diablo Apocalypsis | Registro">
@@ -19,12 +19,14 @@ import Called from '../components/Called.astro';
 	<Story 
 		title={data.story.title}
 		copy={data.story.copy}
-		cta_copy={data.story.ctaCopy}
+		trailer_link={data.story.trailerLink}
+		subtitle={data.story.subtitle}
+		copyTwo={data.story.copy2}
 	/>
-	<Characters 
-		title={data.characters.title}
-		copy={data.characters.copy}
-		heroes={data.characters.heroes}
+	<World 
+		title={data.world.title}
+		copy={data.world.copy}
+		scenes={data.world.scenes}
 	/>
 	<!-- <Called 
 		title={data.called.title}

@@ -1,20 +1,34 @@
 <script>
+    const user = {
+        name: '',
+        lastname: '',
+        email: ''
+    }
 
+    console.log(user.name);
 </script>
 
-<section class="form mt-60">
-    <div class="container">
-        <video autoplay loop muted playsinline>
-            <source src="https://blz-contentstack-assets.akamaized.net/v3/assets/blt9c12f249ac15c7ec/bltf8635f01e2553c58/62a004a79c0ad045adc4888b/fenris-introduction-bg-loop-ultra.mp4" type="video/mp4">
-        </video>
-        <form action="">
-            <label for="">
-                <input type="text">
+<section class="form-container" id="form">
+    <div class="container mx-auto">
+        <form class="form flex flex-col mx-auto items-center">
+            <label for="name" class="mb-5">
+                <input type="text" placeholder="Nombre" bind:value={user.name}>
+            </label>
+            <label for="lastname" class="mb-5">
+                <input type="text" placeholder="Apellido" bind:value={user.lastname}>
             </label>
         </form>
     </div>
 </section>
 
 <style>
+    .form {
+        width: 40%;
+        margin-top: -250px;
+    }
 
+    label {
+        border: 1px solid #CCCCCC;
+        background-color: none;
+    }
 </style>

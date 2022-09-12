@@ -3,58 +3,33 @@ export const data =  {
         title: 'Preparate para la batalla',
         subtitle: 'Salva al mundo del apocalypsis',
         copy: 'Registrate y esperá el llamado de la Luz',
-        ctaLink: 'https://youtu.be/DT9SSA4lKLA',
+        ctaLink: '#form',
         ctaCopy: 'Registrarse'
     },
     story: {
         title: 'La oscuridad ha regresado',
-        copy: 'Al arcángel Tyrael se lo da por muerto, y la humanidad está sola para afrontar las consecuencias de sus actos. Los fragmentos de la Piedra del Mundo, aún dotados de un inmenso poder, contaminan la tierra, y los esbirros de Diablo esperan poder controlar ese poder para que el Señor del Terror pueda regresar.',
-        ctaCopy: 'Mirá el trailer',
+        copy: 'Al arcángel Tyrael se lo da por muerto, y la humanidad está sola para afrontar las consecuencias de sus actos.',
+        trailerLink: 'https://youtu.be/BjHwKbw8tNA',
+        subtitle: 'Nuestra creadora',
+        copy2: 'Un ritual oscuro ha invocado a Lilith de vuelta al mundo tras eones en el exilio. Su regreso trae consigo una era de oscuridad y miseria.'
     },
-    characters: {
-        title: 'Encontrá tu Héroe',
-        copy: 'Limpia cada sector de las ordas del infierno para ganar mayor luz',
-        // heroes: [
-        //     {
-        //         image: './assets/img/barbarian.png',
-        //         name: 'Bárbaro',
-        //         description: 'Los guia un deber ancestral en la montaña sagrada.',
-        //         item: './assets/img/barbarian-item.png'
-        //     },
-        //     {
-        //         image: './assets/img/paladin.png',
-        //         name: 'Paladin',
-        //         description: 'Los paladines son campeones indomables de la fe y la ley.',
-        //         item: './assets/img/paladin-item.png'
-        //     },
-        //     {
-        //         image: './assets/img/hechicera.png',
-        //         name: 'Hechicera',
-        //         description: 'Un conducto viviente de poder arcano.',
-        //         item: './assets/img/hechicera-item.png'
-        //     },
-        //     {
-        //         image: './assets/img/nigromante.png',
-        //         name: 'Nigromante',
-        //         description: 'Líderes implacables y maestros de la vida y la muerte',
-        //         item: './assets/img/nigromante-item.png'
-        //     },
-        //     {
-        //         image: './assets/img/monje.png',
-        //         name: 'Monje',
-        //         description: 'El emblema que llevan los distingue como supervivientes',
-        //         item: './assets/img/monje-item.png'
-        //     },
-        //     {
-        //         image: './assets/img/cazador.png',
-        //         name: 'Cazador',
-        //         description: 'Implacables luchadores que atacan desde lejos',
-        //         item: './assets/img/cazador-item.png'
-        //     },
-        // ]
+    world: {
+        title: 'Recorre nuevos Escenarios',
+        copy: 'Explora el mundo mientras combates por sus vastas tierras.',
+        scenes: [
+            {
+                scene: '../assets/img/scene1.jpg'
+            },{
+                scene: '../assets/img/scene2.jpg'
+            },{
+                scene: '../assets/img/scene3.jpg'
+            },{
+                scene: '../assets/img/scene4.jpg'
+            }
+        ]
     },
     called: {
         title: 'Enfrenta tu destino',
-        copy: 'Acepta el llamado de la Luz y hazte adelante para moldear tu propia historia'
+        copy: 'Escribe tu propia leyenda'
     }
 };

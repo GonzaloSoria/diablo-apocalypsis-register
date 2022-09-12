@@ -1,0 +1,32 @@
+---
+import Scene from "./Scene.astro";
+
+const { title, copy, scenes } = Astro.props;
+---
+
+<section class="world py-36">
+    <div class="container mx-auto">
+        <h2 class="text-center mb-10">{title}</h2>
+        <p class="text-center">{copy}</p>
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 mt-20">
+            {
+                scenes.map(scene => (
+                    <Scene 
+                        img={scene.scene}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .world h2 {
+        color: var(--text-first-color);
+        font-size: var(--title-size);
+    }
+
+    .world p {
+        color: #CCCCCC;
+    }
+</style>
