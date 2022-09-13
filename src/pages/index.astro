@@ -4,7 +4,6 @@ import Hero from '../components/Hero.astro';
 import Story from '../components/Story.astro';
 import { data } from '../data/data';
 import Form from '../components/Form.svelte';
-import Called from '../components/Called.astro';
 import World from '../components/World.astro';
 ---
 
@@ -28,10 +27,8 @@ import World from '../components/World.astro';
 		copy={data.world.copy}
 		scenes={data.world.scenes}
 	/>
-	<!-- <Called 
-		title={data.called.title}
-		copy={data.called.copy}
-	/> -->
-	<!-- <Form /> -->
+	<Form 
+		title={data.form.title}
+	/>
 </Layout>
 

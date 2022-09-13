@@ -14,8 +14,8 @@ export const data =  {
         copy2: 'Un ritual oscuro ha invocado a Lilith de vuelta al mundo tras eones en el exilio. Su regreso trae consigo una era de oscuridad y miseria.'
     },
     world: {
-        title: 'Recorre nuevos Escenarios',
-        copy: 'Explora el mundo mientras combates por sus vastas tierras.',
+        title: 'Un nuevo mundo',
+        copy: 'Explora mientras combates por sus vastas tierras.',
         scenes: [
             {
                 scene: '../assets/img/scene1.jpg'
@@ -28,8 +28,7 @@ export const data =  {
             }
         ]
     },
-    called: {
-        title: 'Enfrenta tu destino',
-        copy: 'Escribe tu propia leyenda'
+    form: {
+        title: 'Registrate para el encuentro final'
     }
 };

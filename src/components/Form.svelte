@@ -1,34 +1,74 @@
 <script>
+    import cta_register from '../assets/img/cta_register.png';
+    export let title;
+
     const user = {
         name: '',
         lastname: '',
+        username: '',
         email: ''
     }
 
     console.log(user.name);
 </script>
 
-<section class="form-container" id="form">
+<section class="form-container py-20" id="form">
     <div class="container mx-auto">
-        <form class="form flex flex-col mx-auto items-center">
-            <label for="name" class="mb-5">
-                <input type="text" placeholder="Nombre" bind:value={user.name}>
-            </label>
-            <label for="lastname" class="mb-5">
-                <input type="text" placeholder="Apellido" bind:value={user.lastname}>
-            </label>
-        </form>
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+            <div class="col-span-2">
+                <video autoplay loop muted playsinline>
+                    <source src="https://blz-contentstack-assets.akamaized.net/v3/assets/blt9c12f249ac15c7ec/bltf8635f01e2553c58/62a004a79c0ad045adc4888b/fenris-introduction-bg-loop-ultra.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div>
+                <h2 class="mb-10 text-center">{title}</h2>
+                <form class="form flex flex-col">
+                    <label for="name" class="mb-5">
+                        <input type="text" placeholder="Nombre" bind:value={user.name}>
+                    </label>
+                    <label for="lastname" class="mb-5">
+                        <input type="text" placeholder="Apellido" bind:value={user.lastname}>
+                    </label>
+                    <label for="username" class="mb-5">
+                        <input type="text" placeholder="Usuario" bind:value={user.username}>
+                    </label>
+                    <div class="text-center">
+                        <button type="submit" class="btn-register">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </section>
 
 <style>
-    .form {
-        width: 40%;
-        margin-top: -250px;
+    .form-container h2 {
+        color: var(--text-first-color);
     }
 
-    label {
-        border: 1px solid #CCCCCC;
-        background-color: none;
+    input[type='text'] {
+        width: 100%;
+        background-color: #000000;
+        border: 1px solid var(--text-first-color);
+        padding: 20px;
+        font-size: var(--copy-size);
+        color: var(--text-first-color);
+    }
+
+    input[type='text']:focus {
+        --tw-ring-color: none;
+    }
+
+    .btn-register {
+        background-color: #56191D;
+        color: var(--text-first-color);
+        width: 200px;
+        padding: 20px;
+        text-transform: uppercase;
+        transition-duration: .5s;
+    }
+
+    .btn-register:hover {
+        background-color: #7d0009;
     }
 </style>
