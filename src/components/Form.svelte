@@ -1,11 +1,9 @@
 <script>
-    import cta_register from '../assets/img/cta_register.png';
-    export let title;
+    export let title;    
 
     const user = {
         name: '',
         lastname: '',
-        username: '',
         email: ''
     }
 
@@ -29,11 +27,11 @@
                     <label for="lastname" class="mb-5">
                         <input type="text" placeholder="Apellido" bind:value={user.lastname}>
                     </label>
-                    <label for="username" class="mb-5">
-                        <input type="text" placeholder="Usuario" bind:value={user.username}>
+                    <label for="email" class="mb-5">
+                        <input type="email" placeholder="Email" bind:value={user.email}>
                     </label>
                     <div class="text-center">
-                        <button type="submit" class="btn-register">Registrarse</button>
+                        <button type="submit" class="btn-send">enviar</button>
                     </div>
                 </form>
             </div>
@@ -46,7 +44,7 @@
         color: var(--text-first-color);
     }
 
-    input[type='text'] {
+    input[type='text'], input[type='email'] {
         width: 100%;
         background-color: #000000;
         border: 1px solid var(--text-first-color);
@@ -59,16 +57,16 @@
         --tw-ring-color: none;
     }
 
-    .btn-register {
+    .btn-send {
         background-color: #56191D;
         color: var(--text-first-color);
         width: 200px;
         padding: 20px;
         text-transform: uppercase;
-        transition-duration: .5s;
+        transition-duration: .4s;
     }
 
-    .btn-register:hover {
+    .btn-send:hover {
         background-color: #7d0009;
     }
 </style>
