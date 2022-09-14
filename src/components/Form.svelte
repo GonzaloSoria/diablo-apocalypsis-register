@@ -21,13 +21,13 @@
             <div>
                 <h2 class="mb-10 text-center">{title}</h2>
                 <form class="form flex flex-col">
-                    <label for="name" class="mb-5">
+                    <label for="name" class="mb-10">
                         <input type="text" placeholder="Nombre" bind:value={user.name}>
                     </label>
-                    <label for="lastname" class="mb-5">
+                    <label for="lastname" class="mb-10">
                         <input type="text" placeholder="Apellido" bind:value={user.lastname}>
                     </label>
-                    <label for="email" class="mb-5">
+                    <label for="email" class="mb-10">
                         <input type="email" placeholder="Email" bind:value={user.email}>
                     </label>
                     <div class="text-center">
@@ -53,7 +53,7 @@
         color: var(--text-first-color);
     }
 
-    input[type='text']:focus {
+    input[type='text']:focus, input[type='email']:focus {
         --tw-ring-color: none;
     }
 

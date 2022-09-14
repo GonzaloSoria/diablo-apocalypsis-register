@@ -5,10 +5,11 @@ const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
 <section class="hero bg-fixed pt-20">
     <div class="container mx-auto pt-10">
         <div class="flex flex-col justify-content items-center pt-56 pb-30 mt-40">
-            <p class="text-white hero-subtitle" id="hero-subtitle">{subtitle}</p>
-            <h1 class="mb-5 text-center hero-title" id="hero-title">{title}</h1>
             <p class="hero-copy" id="hero-copy">{copy}</p>
-            <a href={cta_link} class="register" id="cta"><span>{cta_copy}</span></a>
+            <h1 class="mb-5 text-center hero-title" id="hero-title">{title}</h1>
+            
+            <!-- <a href={cta_link} class="register" id="cta"><span>{cta_copy}</span></a> -->
+            <a href={cta_link} class="register drop-shadow-lg" id="hero-cta">{cta_copy}</a>
         </div>
     </div>
     <img src="./assets/img/divider.png" alt="divider" class="mt-20">
@@ -33,6 +34,20 @@ const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
     }
 
     .register {
+        background-color: #56191D;
+        color: var(--text-first-color);
+        width: 200px;
+        padding: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        transition-duration: .4s;
+    }
+
+    .register:hover {
+        background-color: #7d0009;
+    }
+
+    /* .register {
         background: url('../assets/img/cta-register.png') no-repeat;
         background-position: 0 0;
         display: block;
@@ -56,5 +71,5 @@ const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
 
     .register:hover {
         background-position: 0 -132px;
-    }
+    } */
 </style>
