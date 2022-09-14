@@ -7,7 +7,10 @@
         email: ''
     }
 
-    console.log(user.name);
+    const handleSubmit = () => {
+        console.log(user)
+    }
+
 </script>
 
 <section class="form-container py-20" id="form">
@@ -19,19 +22,19 @@
                 </video>
             </div>
             <div>
-                <h2 class="mb-10 text-center">{title}</h2>
-                <form class="form flex flex-col">
+                <h2 class="font-old-fenris text-subtitle-xs sm:text-subtitle-sm md:text-subtitle-md lg:text-subtitle-lg text-first-color text-center uppercase font-extrabold mb-10">{title}</h2>
+                <form on:submit|preventDefault={handleSubmit} class="form flex flex-col">
                     <label for="name" class="mb-10">
-                        <input type="text" placeholder="Nombre" bind:value={user.name}>
+                        <input class="text-first-color text-copy-lg" type="text" placeholder="Nombre" bind:value={user.name}>
                     </label>
                     <label for="lastname" class="mb-10">
-                        <input type="text" placeholder="Apellido" bind:value={user.lastname}>
+                        <input class="text-first-color text-copy-lg" type="text" placeholder="Apellido" bind:value={user.lastname}>
                     </label>
                     <label for="email" class="mb-10">
-                        <input type="email" placeholder="Email" bind:value={user.email}>
+                        <input class="text-first-color text-copy-lg" type="email" placeholder="Email" bind:value={user.email}>
                     </label>
                     <div class="text-center">
-                        <button type="submit" class="btn-send">enviar</button>
+                        <button type="submit" class="btn-send text-copy-lg text-first-color">enviar</button>
                     </div>
                 </form>
             </div>
@@ -40,17 +43,11 @@
 </section>
 
 <style>
-    .form-container h2 {
-        color: var(--text-first-color);
-    }
-
     input[type='text'], input[type='email'] {
         width: 100%;
         background-color: #000000;
-        border: 1px solid var(--text-first-color);
+        border: 1px solid #D2C8AE;
         padding: 20px;
-        font-size: var(--copy-size);
-        color: var(--text-first-color);
     }
 
     input[type='text']:focus, input[type='email']:focus {
@@ -59,7 +56,6 @@
 
     .btn-send {
         background-color: #56191D;
-        color: var(--text-first-color);
         width: 200px;
         padding: 20px;
         text-transform: uppercase;

@@ -13,7 +13,7 @@ const { title} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body id="content">
+	<body id="content" class="font-rajdhani bg-black">
 		<slot />
 		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 		<script src="../animations/main.js"></script>
@@ -27,45 +27,13 @@ const { title} = Astro.props;
 	src: url("../assets/fonts/ce7ee1905f939d4e0f4cfcb3470c4d4e.woff2") format("woff2"),
 		url("../assets/fonts/ce7ee1905f939d4e0f4cfcb3470c4d4e.woff2") format("woff");
 	}
-	:root {
-		--background-first-color: #000000;
-		--background-second-color: #ffd803;
-		--background-third-color: #272343;
-		--text-first-color: #D2C8AE;
-		--text-second-color: #272343;
-		--text-third-color: #ffd803;		
-		--font-family: 'Rajdhani', sans-serif;
-		--title-font-family: 'Old Fenris', cursive;
-		--title-size: 50px;
-		--subtitle-size: 30px;
-		--copy-size: 22px;
-	}
 	html {
 		scroll-behavior: smooth;
 	}
-	
-	body {
-		background-color: var(--background-first-color);
-		font-family: var(--font-family);
-	}
 
-	h1 {
-		font-weight: 700;
-		font-size: var(--title-size);
-		line-height: 65px;
-		font-family: var(--title-font-family);
-		text-transform: uppercase;
-	}
-
-	h2 {
-		font-weight: 700;
-		font-size: var(--subtitle-size);
-		line-height: 35px;
-		font-family: var(--title-font-family);
-		text-transform: uppercase;
-	}
-
-	p {
-		font-size: var(--copy-size);
+	@media screen (max-width: 1280px) {
+		h1 {
+			font-size: 100px !important;
+		}
 	}
 </style>

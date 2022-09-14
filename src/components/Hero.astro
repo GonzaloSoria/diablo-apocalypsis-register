@@ -1,15 +1,13 @@
 ---
-const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
+const { title, copy, cta_link, cta_copy } = Astro.props;
 ---
 
 <section class="hero bg-fixed pt-20">
     <div class="container mx-auto pt-10">
-        <div class="flex flex-col justify-content items-center pt-56 pb-30 mt-40">
-            <p class="hero-copy" id="hero-copy">{copy}</p>
-            <h1 class="mb-5 text-center hero-title" id="hero-title">{title}</h1>
-            
-            <!-- <a href={cta_link} class="register" id="cta"><span>{cta_copy}</span></a> -->
-            <a href={cta_link} class="register drop-shadow-lg" id="hero-cta">{cta_copy}</a>
+        <div class="flex flex-col justify-content items-center pt-56 pb-40 mt-40">
+            <p class="hero-copy text-first-color text-copy-lg" id="hero-copy">{copy}</p>
+            <h1 class="mb-5 text-center hero-title text-title-sm md:text-title-md lg:text-title-lg text-first-color font-old-fenris font-extrabold uppercase" id="hero-title">{title}</h1>
+            <a href={cta_link} class="register drop-shadow-lg text-first-color text-copy-lg" id="hero-cta">{cta_copy}</a>
         </div>
     </div>
     <img src="./assets/img/divider.png" alt="divider" class="mt-20">
@@ -24,52 +22,20 @@ const { title, subtitle, copy, cta_link, cta_copy } = Astro.props;
     }
 
     .hero-title, .hero-copy{
-        color: var(--text-first-color);
-        text-shadow: 0px 3px 6px #000000;
-        text-transform: uppercase;
-    }
-
-    .hero-subtitle {
         text-shadow: 0px 3px 6px #000000;
     }
 
     .register {
         background-color: #56191D;
-        color: var(--text-first-color);
         width: 200px;
         padding: 20px;
         text-transform: uppercase;
         text-align: center;
+        opacity: 0;
         transition-duration: .4s;
     }
 
     .register:hover {
         background-color: #7d0009;
     }
-
-    /* .register {
-        background: url('../assets/img/cta-register.png') no-repeat;
-        background-position: 0 0;
-        display: block;
-        height: 133px;
-        float: left;
-        margin-top: 45px;
-        margin-left: 11px;
-        position: relative;
-        width: 315px;
-        color: #ad835a;
-    }
-
-    .register span {
-        color: #f3e6d0;
-        font-family: var(--title-font-family);
-        left: 113px;
-        position: relative;
-        top: 57px;
-        text-transform: uppercase;
-    }
-
-    .register:hover {
-        background-position: 0 -132px;
-    } */
 </style>
