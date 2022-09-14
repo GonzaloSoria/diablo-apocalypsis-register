@@ -1,20 +1,30 @@
 <script>
     export let title;    
-
-    const user = {
+    let user = {
         name: '',
         lastname: '',
         email: ''
     }
 
-    const handleSubmit = () => {
-        console.log(user)
+    let errors = {
+        error: false,
+        message: 'No hay errores'
     }
+
+    const handle_submit = () => {
+        if(user.name === '') {
+            errors.message = 'Este campo esta vacío';
+            errors.error = true;
+        }
+    }
+
+    let visible = 'overflow-visible text-error font-bold mb-5';
+    let hiden = 'overflow-hiden mb-5';
 
 </script>
 
 <section class="form-container py-20" id="form">
-    <div class="container mx-auto">
+    <div class="container px-5 mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-3">
             <div class="col-span-2">
                 <video autoplay loop muted playsinline>
@@ -23,16 +33,36 @@
             </div>
             <div>
                 <h2 class="font-old-fenris text-subtitle-xs sm:text-subtitle-sm md:text-subtitle-md lg:text-subtitle-lg text-first-color text-center uppercase font-extrabold mb-10">{title}</h2>
-                <form on:submit|preventDefault={handleSubmit} class="form flex flex-col">
-                    <label for="name" class="mb-10">
-                        <input class="text-first-color text-copy-lg" type="text" placeholder="Nombre" bind:value={user.name}>
+                <form on:submit|preventDefault={handle_submit} class="form flex flex-col">
+                    <label>
+                        <input 
+                            class="text-first-color text-copy-lg" 
+                            type="text" 
+                            placeholder="Nombre" 
+                            minlength="2" 
+                            required 
+                            bind:value={user.name}>
                     </label>
-                    <label for="lastname" class="mb-10">
-                        <input class="text-first-color text-copy-lg" type="text" placeholder="Apellido" bind:value={user.lastname}>
+                    <p class={errors.error !== true ? hiden : visible}>{errors.message}</p>
+                    <label for="lastname">
+                        <input 
+                            class="text-first-color text-copy-lg" 
+                            type="text" 
+                            placeholder="Apellido" 
+                            minlength="2" 
+                            required 
+                            bind:value={user.lastname}>
                     </label>
-                    <label for="email" class="mb-10">
-                        <input class="text-first-color text-copy-lg" type="email" placeholder="Email" bind:value={user.email}>
+                    <p class={errors.error !== true ? hiden : visible}>{errors.message}</p>
+                    <label for="email">
+                        <input 
+                            class="text-first-color text-copy-lg" 
+                            type="email" 
+                            placeholder="Email" 
+                            required 
+                            bind:value={user.email}>
                     </label>
+                    <p class={errors.error !== true ? hiden : visible}>{errors.message}</p>
                     <div class="text-center">
                         <button type="submit" class="btn-send text-copy-lg text-first-color">enviar</button>
                     </div>

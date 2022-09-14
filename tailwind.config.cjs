@@ -6,7 +6,8 @@ module.exports = {
 		colors: {
 			'first-color': '#D2C8AE',
 			'second-color': '#CCCCCC',
-			'black': '#000000'
+			'black': '#000000',
+			'error': '#7d0009'
 		},
 		fontSize: {
 			'title-lg': ['50px', '55px'],
