@@ -1,25 +1,50 @@
 <script>
-    export let title;    
+    export let title; 
+    let users = [];
+    let visible = 'overflow-visible text-error font-bold mb-5';
+    let hiden = 'overflow-hiden mb-5';
+
     let user = {
         name: '',
         lastname: '',
-        email: ''
+        email: '',
     }
 
-    let errors = {
-        error: false,
-        message: 'No hay errores'
+    let validate_form = {
+        errorName: false,
+        errorLastname: false,
+        name: 'No se ha enviado ningun dato',
+        lastname: 'No se ha enviado ningun dato'
     }
 
     const handle_submit = () => {
-        if(user.name === '') {
-            errors.message = 'Este campo esta vacío';
-            errors.error = true;
-        }
-    }
+        const validate = () => {
+            if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.name, user.lastname)) {
+            validate_form.name = 'El nombre solo puede tener letras y espacios';
+            validate_form.errorName = true;
+            } else {
+                validate_form.errorName = false;
+                user.succesfully = true;
+            }
 
-    let visible = 'overflow-visible text-error font-bold mb-5';
-    let hiden = 'overflow-hiden mb-5';
+            if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.lastname)) {
+                validate_form.lastname = 'El apellido solo puede tener letras y espacios';
+                validate_form.errorLastname = true;
+            } else {
+                validate_form.errorLastname = false;
+                user.succesfully = true;
+            }
+        }
+        validate();
+
+        if(validate_form.errorName === false && validate_form.errorLastname === false) {
+            users = [...users, {name: user.name, lastname: user.lastname, email: user.email}];
+            console.log(users);
+            user.name = '';
+            user.lastname = '';
+            user.email = '';
+        }              
+    }
 
 </script>
 
@@ -33,36 +58,35 @@
             </div>
             <div>
                 <h2 class="font-old-fenris text-subtitle-xs sm:text-subtitle-sm md:text-subtitle-md lg:text-subtitle-lg text-first-color text-center uppercase font-extrabold mb-10">{title}</h2>
-                <form on:submit|preventDefault={handle_submit} class="form flex flex-col">
+                <form on:submit|preventDefault={handle_submit} class="form flex flex-col" id="form_reset">
                     <label>
                         <input 
-                            class="text-first-color text-copy-lg" 
+                            class="text-first-color text-copy-lg mb-2" 
                             type="text" 
                             placeholder="Nombre" 
-                            minlength="2" 
-                            required 
+                            minlength="3" 
+                            required
                             bind:value={user.name}>
                     </label>
-                    <p class={errors.error !== true ? hiden : visible}>{errors.message}</p>
+                    <p class={validate_form.errorName !== true ? hiden : visible}>{validate_form.name}</p>
                     <label for="lastname">
                         <input 
-                            class="text-first-color text-copy-lg" 
+                            class="text-first-color text-copy-lg mb-2" 
                             type="text" 
                             placeholder="Apellido" 
-                            minlength="2" 
-                            required 
+                            minlength="3" 
+                            required
                             bind:value={user.lastname}>
                     </label>
-                    <p class={errors.error !== true ? hiden : visible}>{errors.message}</p>
+                    <p class={validate_form.errorLastname !== true ? hiden : visible}>{validate_form.lastname}</p>
                     <label for="email">
                         <input 
-                            class="text-first-color text-copy-lg" 
+                            class="text-first-color text-copy-lg mb-10" 
                             type="email" 
                             placeholder="Email" 
                             required 
                             bind:value={user.email}>
                     </label>
-                    <p class={errors.error !== true ? hiden : visible}>{errors.message}</p>
                     <div class="text-center">
                         <button type="submit" class="btn-send text-copy-lg text-first-color">enviar</button>
                     </div>
