@@ -10,7 +10,7 @@
         email: '',
     }
 
-    let validate_form = {
+    let errors = {
         errorName: false,
         errorLastname: false,
         name: 'No se ha enviado ningun dato',
@@ -20,24 +20,24 @@
     const handle_submit = () => {
         const validate = () => {
             if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.name, user.lastname)) {
-            validate_form.name = 'El nombre solo puede tener letras y espacios';
-            validate_form.errorName = true;
+            errors.name = 'El nombre solo puede tener letras y espacios';
+            errors.errorName = true;
             } else {
-                validate_form.errorName = false;
+                errors.errorName = false;
                 user.succesfully = true;
             }
 
             if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.lastname)) {
-                validate_form.lastname = 'El apellido solo puede tener letras y espacios';
-                validate_form.errorLastname = true;
+                errors.lastname = 'El apellido solo puede tener letras y espacios';
+                errors.errorLastname = true;
             } else {
-                validate_form.errorLastname = false;
+                errors.errorLastname = false;
                 user.succesfully = true;
             }
         }
         validate();
 
-        if(validate_form.errorName === false && validate_form.errorLastname === false) {
+        if(errors.errorName === false && errors.errorLastname === false) {
             users = [...users, {name: user.name, lastname: user.lastname, email: user.email}];
             console.log(users);
             user.name = '';
@@ -68,7 +68,7 @@
                             required
                             bind:value={user.name}>
                     </label>
-                    <p class={validate_form.errorName !== true ? hiden : visible}>{validate_form.name}</p>
+                    <p class={errors.errorName !== true ? hiden : visible}>{errors.name}</p>
                     <label for="lastname">
                         <input 
                             class="text-first-color text-copy-lg mb-2" 
@@ -78,7 +78,7 @@
                             required
                             bind:value={user.lastname}>
                     </label>
-                    <p class={validate_form.errorLastname !== true ? hiden : visible}>{validate_form.lastname}</p>
+                    <p class={errors.errorLastname !== true ? hiden : visible}>{errors.lastname}</p>
                     <label for="email">
                         <input 
                             class="text-first-color text-copy-lg mb-10" 
