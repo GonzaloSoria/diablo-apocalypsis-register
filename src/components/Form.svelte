@@ -1,8 +1,7 @@
 <script>
     export let title; 
+    export let message_succes;
     let users = [];
-    let visible = 'overflow-visible text-error font-bold mb-5';
-    let hidden = 'overflow-hidden mb-5';
     let form_sent_succesfully = false;
 
     let user = {
@@ -25,29 +24,28 @@
                 errors.errorName = true;
             } else {
                 errors.errorName = false;
-            }
+            };
 
             if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.lastname)) {
                 errors.lastname = 'El apellido solo puede tener letras y espacios';
                 errors.errorLastname = true;
             } else {
                 errors.errorLastname = false;
-            }
-        }
+            };
+        };
         validate();
 
         if(errors.errorName === false && errors.errorLastname === false) {
             users = [...users, {name: user.name, lastname: user.lastname, email: user.email}];
-            console.log(users);
             form_sent_succesfully = true;
             setTimeout(() => {
                 form_sent_succesfully = false;
                 user.name = '';
                 user.lastname = '';
                 user.email = '';
-            }, 4000)
-        }              
-    }
+            }, 4000);
+        };  
+    };
 </script>
 
 <section class="form-container pt-20" id="form">
@@ -70,7 +68,7 @@
                             required
                             bind:value={user.name}>
                     </label>
-                    <p class={errors.errorName !== true ? hidden : visible}>{errors.name}</p>
+                    <p class="{errors.errorName !== true ? 'overflow-hidden mb-5' : 'overflow-visible text-error font-bold mb-5'} mb-5">{errors.name}</p>
                     <label for="lastname">
                         <input 
                             class="text-first-color text-copy-lg mb-2" 
@@ -80,7 +78,7 @@
                             required
                             bind:value={user.lastname}>
                     </label>
-                    <p class={errors.errorLastname !== true ? hidden : visible}>{errors.lastname}</p>
+                    <p class={errors.errorLastname !== true ? 'overflow-hidden mb-5' : 'overflow-visible text-error font-bold mb-5'}>{errors.lastname}</p>
                     <label for="email">
                         <input 
                             class="text-first-color text-copy-lg mb-10" 
@@ -93,7 +91,7 @@
                         <button type="submit" class="btn-send text-copy-lg text-first-color">enviar</button>
                     </div>
                 </form>
-                <h3 class="{form_sent_succesfully !== true ? 'opacity-0' : 'opacity-100'} font-old-fenris text-copy-lg text-first-color text-center uppercase font-extrabold py-5" id="succes_form_message">Un nuevo campeón ha surgido</h3>
+                <h3 class="{form_sent_succesfully !== true ? 'opacity-0' : 'opacity-100'} font-old-fenris text-copy-lg text-first-color text-center uppercase font-extrabold py-5" id="succes_form_message">{message_succes}</h3>
             </div>
         </div>
     </div>

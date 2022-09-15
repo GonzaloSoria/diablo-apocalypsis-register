@@ -30,6 +30,7 @@ export const data =  {
         ]
     },
     form: {
-        title: 'Registrate para el encuentro final'
+        title: 'Acepta tu Destino',
+        messageSucces: 'Un nuevo campeón ha surgido'
     }
 };
