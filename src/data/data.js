@@ -10,6 +10,7 @@ export const data =  {
         title: 'La oscuridad ha regresado',
         copy: 'Al arcángel Tyrael se lo da por muerto, y la humanidad está sola para afrontar las consecuencias de sus actos.',
         trailerLink: 'https://youtu.be/BjHwKbw8tNA',
+        trailerCopy: 'trailer',
         subtitle: 'Nuestra creadora',
         copy2: 'Un ritual oscuro ha invocado a Lilith de vuelta al mundo tras eones en el exilio. Su regreso trae consigo una era de oscuridad y miseria.'
     },
