@@ -4,11 +4,11 @@ import Scene from "./Scene.astro";
 const { title, copy, scenes } = Astro.props;
 ---
 
-<section class="world py-36">
+<section class="world py-10 lg:py-36 px-5 md:px-0">
     <div class="container mx-auto">
-        <h2 class="font-old-fenris text-subtitle-xs sm:text-subtitle-sm md:text-subtitle-md lg:text-subtitle-lg text-first-color text-center uppercase font-extrabold mb-10">{title}</h2>
-        <p class="text-second-color text-copy-lg text-center">{copy}</p>
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 mt-20">
+        <h2 class="font-old-fenris text-subtitle-sm md:text-subtitle-md lg:text-subtitle-lg text-first-color text-center uppercase font-extrabold mb-10">{title}</h2>
+        <p class="text-first-color text-copy-sm md:text-copy-md text-center">{copy}</p>
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 mt-10 lg:mt-20">
             {
                 scenes.map(scene => (
                     <Scene 

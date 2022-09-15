@@ -4,10 +4,10 @@ const { title, copy, cta_link, cta_copy } = Astro.props;
 
 <section class="hero bg-fixed pt-20">
     <div class="container mx-auto pt-10">
-        <div class="flex flex-col justify-content items-center pt-56 pb-40 mt-40">
-            <p class="hero-copy text-first-color text-copy-lg" id="hero-copy">{copy}</p>
+        <div class="flex flex-col justify-content items-center pt-20 md:pt-56 lg:pb-20 xl:pb-40 mt-40">
+            <p class="hero-copy text-first-color text-copy-sm md:text-copy-md text-center" id="hero-copy">{copy}</p>
             <h1 class="mb-5 text-center hero-title text-title-sm md:text-title-md lg:text-title-lg text-first-color font-old-fenris font-extrabold uppercase" id="hero-title">{title}</h1>
-            <a href={cta_link} class="register drop-shadow-lg text-first-color text-copy-lg" id="hero-cta">{cta_copy}</a>
+            <a href={cta_link} class="register drop-shadow-lg text-first-color text-copy-sm md:text-copy-md" id="hero-cta">{cta_copy}</a>
         </div>
     </div>
     <img src="./assets/img/divider.png" alt="divider" class="mt-20">
@@ -15,7 +15,7 @@ const { title, copy, cta_link, cta_copy } = Astro.props;
 
 <style>
     .hero {
-        background-image: url('https://images5.alphacoders.com/112/1126803.jpg');
+        background-image: url('https://images5.alphacoders.com/104/thumb-1920-1049987.png');
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;

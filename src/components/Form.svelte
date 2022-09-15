@@ -48,7 +48,7 @@
     };
 </script>
 
-<section class="form-container pt-20" id="form">
+<section class="form-container pt-5 md:pt-20" id="form">
     <div class="container px-5 mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-3">
             <div class="col-span-2">
@@ -57,11 +57,11 @@
                 </video>
             </div>
             <div>
-                <h2 class="font-old-fenris text-subtitle-xs sm:text-subtitle-sm md:text-subtitle-md lg:text-subtitle-lg text-first-color text-center uppercase font-extrabold mb-10">{title}</h2>
+                <h2 class="font-old-fenris text-subtitle-sm md:text-subtitle-md lg:text-subtitle-lg text-first-color text-center uppercase font-extrabold mb-10">{title}</h2>
                 <form on:submit|preventDefault={handle_submit} class="form flex flex-col" id="form_reset">
                     <label>
                         <input 
-                            class="text-first-color text-copy-lg mb-2" 
+                            class="text-first-color text-copy-sm md:text-copy-md mb-2" 
                             type="text" 
                             placeholder="Nombre" 
                             minlength="3" 
@@ -71,7 +71,7 @@
                     <p class="{errors.errorName !== true ? 'overflow-hidden mb-5' : 'overflow-visible text-error font-bold mb-5'} mb-5">{errors.name}</p>
                     <label for="lastname">
                         <input 
-                            class="text-first-color text-copy-lg mb-2" 
+                            class="text-first-color text-copy-sm md:text-copy-md mb-2" 
                             type="text" 
                             placeholder="Apellido" 
                             minlength="3" 
@@ -81,17 +81,17 @@
                     <p class={errors.errorLastname !== true ? 'overflow-hidden mb-5' : 'overflow-visible text-error font-bold mb-5'}>{errors.lastname}</p>
                     <label for="email">
                         <input 
-                            class="text-first-color text-copy-lg mb-10" 
+                            class="text-first-color text-copy-sm md:text-copy-md mb-10" 
                             type="email" 
                             placeholder="Email" 
                             required 
                             bind:value={user.email}>
                     </label>
                     <div class="text-center">
-                        <button type="submit" class="btn-send text-copy-lg text-first-color">enviar</button>
+                        <button type="submit" class="btn-send text-first-color text-copy-sm md:text-copy-md">enviar</button>
                     </div>
                 </form>
-                <h3 class="{form_sent_succesfully !== true ? 'opacity-0' : 'opacity-100'} font-old-fenris text-copy-lg text-first-color text-center uppercase font-extrabold py-5" id="succes_form_message">{message_succes}</h3>
+                <h3 class="{form_sent_succesfully !== true ? 'opacity-0' : 'opacity-100'} font-old-fenris text-first-color text-copy-sm md:text-copy-md text-center uppercase font-extrabold py-5" id="succes_form_message">{message_succes}</h3>
             </div>
         </div>
     </div>
