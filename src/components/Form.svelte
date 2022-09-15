@@ -68,7 +68,7 @@
                             required
                             bind:value={user.name}>
                     </label>
-                    <p class="{errors.errorName !== true ? 'overflow-hidden mb-5' : 'overflow-visible text-error font-bold mb-5'} mb-5">{errors.name}</p>
+                    <p class="{errors.errorName !== true ? 'overflow-hidden' : 'overflow-visible text-error font-bold'} mb-5">{errors.name}</p>
                     <label for="lastname">
                         <input 
                             class="text-first-color text-copy-sm md:text-copy-md mb-2" 
@@ -78,7 +78,7 @@
                             required
                             bind:value={user.lastname}>
                     </label>
-                    <p class={errors.errorLastname !== true ? 'overflow-hidden mb-5' : 'overflow-visible text-error font-bold mb-5'}>{errors.lastname}</p>
+                    <p class="{errors.errorLastname !== true ? 'overflow-hidden' : 'overflow-visible text-error font-bold'} mb-5">{errors.lastname}</p>
                     <label for="email">
                         <input 
                             class="text-first-color text-copy-sm md:text-copy-md mb-10" 
