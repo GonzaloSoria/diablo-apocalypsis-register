@@ -2,7 +2,8 @@
     export let title; 
     let users = [];
     let visible = 'overflow-visible text-error font-bold mb-5';
-    let hiden = 'overflow-hiden mb-5';
+    let hidden = 'overflow-hidden mb-5';
+    let form_sent_succesfully = false;
 
     let user = {
         name: '',
@@ -38,14 +39,18 @@
         if(errors.errorName === false && errors.errorLastname === false) {
             users = [...users, {name: user.name, lastname: user.lastname, email: user.email}];
             console.log(users);
-            user.name = '';
-            user.lastname = '';
-            user.email = '';
+            form_sent_succesfully = true;
+            setTimeout(() => {
+                form_sent_succesfully = false;
+                user.name = '';
+                user.lastname = '';
+                user.email = '';
+            }, 4000)
         }              
     }
 </script>
 
-<section class="form-container py-20" id="form">
+<section class="form-container pt-20" id="form">
     <div class="container px-5 mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-3">
             <div class="col-span-2">
@@ -65,7 +70,7 @@
                             required
                             bind:value={user.name}>
                     </label>
-                    <p class={errors.errorName !== true ? hiden : visible}>{errors.name}</p>
+                    <p class={errors.errorName !== true ? hidden : visible}>{errors.name}</p>
                     <label for="lastname">
                         <input 
                             class="text-first-color text-copy-lg mb-2" 
@@ -75,7 +80,7 @@
                             required
                             bind:value={user.lastname}>
                     </label>
-                    <p class={errors.errorLastname !== true ? hiden : visible}>{errors.lastname}</p>
+                    <p class={errors.errorLastname !== true ? hidden : visible}>{errors.lastname}</p>
                     <label for="email">
                         <input 
                             class="text-first-color text-copy-lg mb-10" 
@@ -88,6 +93,7 @@
                         <button type="submit" class="btn-send text-copy-lg text-first-color">enviar</button>
                     </div>
                 </form>
+                <h3 class="{form_sent_succesfully !== true ? 'opacity-0' : 'opacity-100'} font-old-fenris text-copy-lg text-first-color text-center uppercase font-extrabold py-5" id="succes_form_message">Un nuevo campeón ha surgido</h3>
             </div>
         </div>
     </div>
@@ -116,4 +122,9 @@
     .btn-send:hover {
         background-color: #7d0009;
     }
+
+    h3 {
+        transition-duration: 2s;
+    }
+
 </style>
