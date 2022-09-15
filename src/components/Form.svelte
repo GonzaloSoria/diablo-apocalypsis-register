@@ -18,26 +18,24 @@
     }
 
     const handle_submit = () => {
-        const validate = () => {
-            if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.name)) {
-                errors.name = 'El nombre solo puede tener letras y espacios';
-                errors.errorName = true;
-            } else {
-                errors.errorName = false;
-            };
-
-            if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.lastname)) {
-                errors.lastname = 'El apellido solo puede tener letras y espacios';
-                errors.errorLastname = true;
-            } else {
-                errors.errorLastname = false;
-            };
+        if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.name)) {
+            errors.name = 'El nombre solo puede tener letras y espacios';
+            errors.errorName = true;
+        } else {
+            errors.errorName = false;
         };
-        validate();
+
+        if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.lastname)) {
+            errors.lastname = 'El apellido solo puede tener letras y espacios';
+            errors.errorLastname = true;
+        } else {
+            errors.errorLastname = false;
+        };
 
         if(errors.errorName === false && errors.errorLastname === false) {
             users = [...users, {name: user.name, lastname: user.lastname, email: user.email}];
             form_sent_succesfully = true;
+            console.log(users);
             setTimeout(() => {
                 form_sent_succesfully = false;
                 user.name = '';
