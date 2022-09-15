@@ -5,6 +5,7 @@ import Story from '../components/Story.astro';
 import Form from '../components/Form.svelte';
 import World from '../components/World.astro';
 import { data } from '../data/data';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Diablo Apocalypsis | Registro">
@@ -30,5 +31,6 @@ import { data } from '../data/data';
 		title={data.form.title}
 		client:idle
 	/>
+	<Footer />
 </Layout>
 

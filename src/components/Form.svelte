@@ -19,12 +19,11 @@
 
     const handle_submit = () => {
         const validate = () => {
-            if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.name, user.lastname)) {
-            errors.name = 'El nombre solo puede tener letras y espacios';
-            errors.errorName = true;
+            if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.name)) {
+                errors.name = 'El nombre solo puede tener letras y espacios';
+                errors.errorName = true;
             } else {
                 errors.errorName = false;
-                user.succesfully = true;
             }
 
             if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.lastname)) {
@@ -32,7 +31,6 @@
                 errors.errorLastname = true;
             } else {
                 errors.errorLastname = false;
-                user.succesfully = true;
             }
         }
         validate();
@@ -45,7 +43,6 @@
             user.email = '';
         }              
     }
-
 </script>
 
 <section class="form-container py-20" id="form">

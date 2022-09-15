@@ -7,7 +7,7 @@ module.exports = {
 			'first-color': '#D2C8AE',
 			'second-color': '#CCCCCC',
 			'black': '#000000',
-			'error': '#7d0009'
+			'error': 'red'
 		},
 		fontSize: {
 			'title-lg': ['50px', '55px'],
@@ -18,7 +18,8 @@ module.exports = {
 			'subtitle-md': ['25px', '28px'],
 			'subtitle-sm': ['20px', '23px'],
 			'subtitle-xs': ['18px', '21px'],
-			'copy-lg': ['25px', '28px']
+			'copy-lg': ['25px', '28px'],
+			'legals': ['12px', '16px']
 		},
 		fontFamily: {
 			'rajdhani': ['Rajdhani', 'sans-serif'],
