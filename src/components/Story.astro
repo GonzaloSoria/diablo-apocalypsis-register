@@ -1,6 +1,4 @@
 ---
-import trailer_img from '../assets/img/trailer-img.png';
-import divider from '../assets/img/divider.png';
 const { title, copy, trailer_link, trailer_copy, subtitle, copyTwo } = Astro.props;
 ---
 
@@ -13,7 +11,7 @@ const { title, copy, trailer_link, trailer_copy, subtitle, copyTwo } = Astro.pro
             </div>
             <div class="mx-auto col-span-2">
                 <a href={trailer_link} target="_blank">
-                    <img src={trailer_img} alt="trailer">
+                    <img src="../assets/img/trailer-img.png" alt="trailer">
                 </a>
                 <h2 class="story-subtitle font-old-fenris text-copy-sm md:text-copy-md text-first-color text-center uppercase font-extrabold mt-5 mb-10">{trailer_copy}</h2>
             </div>
@@ -35,7 +33,7 @@ const { title, copy, trailer_link, trailer_copy, subtitle, copyTwo } = Astro.pro
             </div>
         </div>
     </div>
-    <img src={divider} alt="Divider">
+    <img src="../assets/img/divider.png" alt="Divider">
 </section>
 
 <style>
