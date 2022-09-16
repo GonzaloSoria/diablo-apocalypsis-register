@@ -17,6 +17,14 @@
         lastname: 'No se ha enviado ningun dato'
     }
 
+    const reset = () => {
+        user.name = '';
+        user.lastname = '';
+        user.email = '';
+        errors.name = 'No se ha enviado ningun dato';
+        errors.lastname = 'No se ha enviado ningun dato';
+    };
+
     const handle_submit = () => {
         if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.name)) {
             errors.name = 'El nombre solo puede tener letras y espacios';
@@ -38,9 +46,7 @@
             console.log(users);
             setTimeout(() => {
                 form_sent_succesfully = false;
-                user.name = '';
-                user.lastname = '';
-                user.email = '';
+                reset();
             }, 4000);
         };  
     };
