@@ -43,10 +43,9 @@
         if(errors.errorName === false && errors.errorLastname === false) {
             users = [...users, {name: user.name, lastname: user.lastname, email: user.email}];
             form_sent_succesfully = true;
-            console.log(users);
+            reset();
             setTimeout(() => {
                 form_sent_succesfully = false;
-                reset();
             }, 4000);
         };  
     };
