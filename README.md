@@ -6,7 +6,7 @@ Diablo Apocalypsis Register (concept art), building with Astro, Svelte and Tailw
 
 ## 💻 Installation 💻
 - Enter to the folder will contain the project
-- Open the terminal and execute the next commands
+- Open the terminal and execute the next commands:
     - Running "**git clone https://github.com/GonzaloSoria/diablo-apocalypsis-register.git**" to clone the repository
     - Enter to the folder created with "**cd diablo-apocalypsis-register**"
     - Install dependencies running "**npm install**"
