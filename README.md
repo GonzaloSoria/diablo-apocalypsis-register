@@ -1,4 +1,3 @@
-<img src="../assets/img/readme.jpg" alt="Diablo Apocalypsis Register" width="100%" height="auto">
 
 ## 📜 About 📜
 
