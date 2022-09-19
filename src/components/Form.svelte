@@ -2,7 +2,7 @@
     export let title; 
     export let message_succes;
     let users = [];
-    let form_sent_succesfully = false;
+    let form_sent_successfully = false;
 
     let user = {
         name: '',
@@ -42,10 +42,10 @@
 
         if(errors.errorName === false && errors.errorLastname === false) {
             users = [...users, {name: user.name, lastname: user.lastname, email: user.email}];
-            form_sent_succesfully = true;
+            form_sent_successfully = true;
             reset();
             setTimeout(() => {
-                form_sent_succesfully = false;
+                form_sent_successfully = false;
             }, 4000);
         };  
     };
@@ -94,7 +94,7 @@
                         <button type="submit" class="btn-send text-first-color text-copy-sm md:text-copy-md">enviar</button>
                     </div>
                 </form>
-                <h3 class="{form_sent_succesfully !== true ? 'opacity-0' : 'opacity-100'} font-old-fenris text-first-color text-copy-sm md:text-copy-md text-center uppercase font-extrabold py-5" id="succes_form_message">{message_succes}</h3>
+                <h3 class="{form_sent_successfully !== true ? 'opacity-0' : 'opacity-100'} font-old-fenris text-first-color text-copy-sm md:text-copy-md text-center uppercase font-extrabold py-5" id="succes_form_message">{message_succes}</h3>
             </div>
         </div>
     </div>
