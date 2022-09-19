@@ -1,4 +1,4 @@
-<img src="https://github.com/GonzaloSoria/diablo-apocalypsis-register/blob/master/src/readme.jpg">
+<img src="https://github.com/GonzaloSoria/diablo-apocalypsis-register/blob/master/src/readme.jpg" alt="Diablo Apocalypsis | Registro">
 
 ## 📜 About 📜
 
