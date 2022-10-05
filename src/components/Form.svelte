@@ -1,15 +1,25 @@
 <script>
     export let title; 
     export let message_succes;
+
+    /**
+     * @type {Array<Objects>}
+     */
     let users = [];
     let form_sent_successfully = false;
 
+    /**
+     * @type {user}
+     */
     let user = {
         name: '',
         lastname: '',
         email: '',
     }
 
+    /**
+     * @type {errors}
+     */
     let errors = {
         errorName: false,
         errorLastname: false,
@@ -17,6 +27,9 @@
         lastname: 'No se ha enviado ningun dato'
     }
 
+    /**
+     * @type {reset}
+     */
     const reset = () => {
         user.name = '';
         user.lastname = '';
@@ -25,6 +38,16 @@
         errors.lastname = 'No se ha enviado ningun dato';
     };
 
+    /**
+     * @see handle_submit
+     * @param {String} user.name string
+     * @param {String} user.lastname string
+     * @param {String} errors.name string
+     * @param {String} errors.lastname string
+     * @param {Boolean} errors.errorName boolean
+     * @param {Boolean} errors.errorLastname boolean
+     * @description Evaluate if name and lastname fields has only letters and spaces.
+    */
     const handle_submit = () => {
         if (!/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/.test(user.name)) {
             errors.name = 'El nombre solo puede tener letras y espacios';
@@ -40,6 +63,9 @@
             errors.errorLastname = false;
         };
 
+        /**
+         * Add the user register to the users array and show a succes message
+        */
         if(errors.errorName === false && errors.errorLastname === false) {
             users = [...users, {name: user.name, lastname: user.lastname, email: user.email}];
             form_sent_successfully = true;
